@@ -1,7 +1,7 @@
 <?php
 namespace Entidade;
 
-use \Persistencia\Conexao;
+use reciclaapp_site\Persistencia\Conexao;
 
 class LixoDenuncia
 {
@@ -20,7 +20,7 @@ class LixoDenuncia
 	{
 		$sql = "SELECT `ID`, `Nome`, `Email`, `Logradouro`, `Numero`, `Bairro`, `TipoLixo`, `Latitude`, `Longitude`, `Data` FROM `Localizacao` WHERE 1";
 		$query = Conexao::getInstance()->query($sql);
- 		
+		
 		return $query->fetchAll(PDO::FETCH_ASSOC);
 	}
 }
