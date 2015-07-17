@@ -1,29 +1,40 @@
+var markersData = null;
+$.ajax({
+    url : "http://localhost/reciclaapp_site/dados.php",
+    dataType : "json",
+    success : function(data)
+    {
+      markersData = data;
+    }
+});//termina o ajax
+/*
 var markersData = [
   {
-      lat: -3.7427431,
-      lng: -38.5014406,
-      nome: "Estácio Fic",
-      morada1:"Rua Visconde de Mauá, 1940",
-      morada2: "Lixo Residencial",
-      codPostal: "Data da denuncia: 07/07/2015" // não colocar virgula no último item de cada marcador
+      Latitude: -3.7427431,
+      Longitude: -38.5014406,
+      Bairro: "Estácio Fic",
+      Logradouro:"Rua Visconde de Mauá, 1940",
+      TipoLixo: "Lixo Residencial",
+      Data: "Data da denuncia: 07/07/2015" // não colocar virgula no último item de cada marcador
    },
    {
-      lat: -3.7376735,
-      lng: -38.5361826,
-      nome: "UFC",
-      morada1:"Avenida da Universidade, 2307",
-      morada2: "Outros",
-      codPostal: "Data da denuncia: 25/06/2015" // não colocar virgula no último item de cada marcador
+      Latitude: -3.7376735,
+      Longitude: -38.5361826,
+      Bairro: "UFC",
+      Logradouro:"Avenida da Universidade, 2307",
+      TipoLixo: "Outros",
+      Data: "Data da denuncia: 25/06/2015" // não colocar virgula no último item de cada marcador
    },
    {
-      lat: -3.7220178,
-      lng: -38.528197,
-      nome: "Santa Casa de Misericória",
-      morada1:"Rua Senador Pompeu, 349",
-      morada2: "Lixo Hospitalar",
-      codPostal: "Data da denuncia: 01/07/2015" // não colocar virgula no último item de cada marcador
+      Latitude: -3.7220178,
+      Longitude: -38.528197,
+      Bairro: "Santa Casa de Misericória",
+      Logradouro:"Rua Senador Pompeu, 349",
+      TipoLixo: "Lixo Hospitalar",
+      Data: "Data da denuncia: 01/07/2015" // não colocar virgula no último item de cada marcador
    } // não colocar vírgula no último marcador
 ];
+*/
 
 // Esta função vai percorrer a informação contida na variável markersData
 // e cria os marcadores através da função createMarker
@@ -37,13 +48,13 @@ function displayMarkers(){
    // para que a função createMarker possa criar os marcadores 
    for (var i = 0; i < markersData.length; i++){
 
-      var latlng = new google.maps.LatLng(markersData[i].lat, markersData[i].lng);
-      var nome = markersData[i].nome;
-      var morada1 = markersData[i].morada1;
-      var morada2 = markersData[i].morada2;
-      var codPostal = markersData[i].codPostal;
+      var latlng = new google.maps.LatLng(markersData[i].Latitude, markersData[i].Longitude);
+      var Bairro = markersData[i].Bairro;
+      var Logradouro = markersData[i].Logradouro;
+      var TipoLixo = markersData[i].TipoLixo;
+      var Data = markersData[i].Data;
 
-      createMarker(latlng, nome, morada1, morada2, codPostal);
+      createMarker(latlng, Bairro, Logradouro, TipoLixo, Data);
 
       // Os valores de latitude e longitude do marcador são adicionados à
       // variável bounds
@@ -58,7 +69,7 @@ function displayMarkers(){
 }
 
 // Função que cria os marcadores e define o conteúdo de cada Info Window.
-function createMarker(latlng, nome, morada1, morada2, codPostal){
+function createMarker(latlng, Bairro, Logradouro, TipoLixo, Data){
     var image = {
     url: 'images/trash.png',
     // This marker is 20 pixels wide by 32 pixels tall.
@@ -74,7 +85,7 @@ function createMarker(latlng, nome, morada1, morada2, codPostal){
       icon: image,
       draggable:false,
       position: latlng,
-      title: nome
+      title: Bairro
    });
 
    // Evento que dá instrução à API para estar alerta ao click no marcador.
@@ -83,10 +94,10 @@ function createMarker(latlng, nome, morada1, morada2, codPostal){
       
       // Variável que define a estrutura do HTML a inserir na Info Window.
       var iwContent = '<div id="iw_container">' +
-      '<div class="iw_title">' + nome + '</div>' +
-      '<div class="iw_content">' + morada1 + '<br />' +
-      morada2 + '<br />' +
-      codPostal + '</div></div>';
+      '<div class="iw_title">' + Bairro + '</div>' +
+      '<div class="iw_content">' + Logradouro + '<br />' +
+      TipoLixo + '<br />' +
+      Data + '</div></div>';
       
       // O conteúdo da variável iwContent é inserido na Info Window.
       infoWindow.setContent(iwContent);

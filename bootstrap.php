@@ -1,6 +1,9 @@
 <?php
 function __autoload($className)
 {
+	if(class_exists($className, false) || interface_exists($className, false))
+		return;
+	
     $className = ltrim($className, '\\');
     $fileName  = '';
     $namespace = '';

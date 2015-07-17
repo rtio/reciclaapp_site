@@ -1,7 +1,7 @@
 <?php
 namespace Jupiter\Persistencia;
 
-use \PDO;
+use \PDO as PDO;
 
 class Conn
 {
