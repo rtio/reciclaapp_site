@@ -1,0 +1,14 @@
+{
+  "vars": {},
+  "css": [
+    "buttons.less",
+    "component-animations.less",
+    "tooltip.less",
+    "popovers.less"
+  ],
+  "js": [
+    "tooltip.js",
+    "popover.js"
+  ],
+  "customizerUrl": "http://getbootstrap.com/customize/?id=aef1e275a3949980fb52"
+}
