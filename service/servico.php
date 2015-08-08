@@ -4,10 +4,10 @@ if($_GET)
 {
 	try
 	{
-		$username = 'jupadmin_recadm';
-		$password = 'J4ze9lMXn,0]';
+		$username = 'reciclaa_admin';
+		$password = 'recicla2015*';
 
-    	$conn = new PDO('mysql:host=localhost;dbname=jupadmin_reciclabase', $username, $password);
+    	$conn = new PDO('mysql:host=localhost;dbname=reciclaa_recicdb', $username, $password);
     	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		$stmt = $conn->prepare('INSERT INTO Localizacao (Nome, Email, Logradouro, Numero, Bairro, TipoLixo, Latitude, Longitude, Data) VALUES(:Nome, :Email, :Logradouro, :Numero, :Bairro, :TipoLixo, :Latitude, :Longitude, NOW())');
