@@ -3,5 +3,7 @@ include 'bootstrap.php';
 
 use Jupiter\Entidade\Lixo;
 
-echo json_encode(Lixo::getAllData());
+$fp = fopen('js/pontos.json', 'w');
+fwrite($fp, json_encode(Lixo::getAllData()));
+fclose($fp);
 ?>

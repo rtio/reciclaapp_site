@@ -7,7 +7,7 @@ class Conn
 {
 	public static $instance;
 
-	const HOST     = 'localhost';
+	const HOST     = 'localhost'; // const HOST     = 'jupitertec.com.br';  Produção
 	const DBNAME   = 'jupadmin_reciclabase';
 	const USER     = 'jupadmin_recadm';
 	const PASSWORD = 'J4ze9lMXn,0]';
