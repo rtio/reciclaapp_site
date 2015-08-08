@@ -28,7 +28,7 @@
         <p><b>Orientando: </b>Aluno 1</p>
         <p><b>Orientando: </b>Aluno 2</p>
         <p>O projeto se destina à comunidade, para que os usuários do sistema informem focos de lixo, mal armazenados, espalhados pela cidade.</p>
-        <p>Faça o download do app <a href="#">aqui</a>.</p>
+        <p>Faça o download do app <a href="output/reciclaapp.apk">aqui</a>.</p>
     </div>  
 
     <script src="js/jquery.min.js"></script>
