@@ -4,6 +4,12 @@
     <head>
         <meta charset="utf-8" />
         <title>:: Recicla App ::</title>
+
+        <link rel="apple-touch-icon" sizes="57x57" href="img/57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="img/72x72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="img/114x114.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="img/144x144.png" />
+
         <link rel="icon" type="image/png" href="img/96x96.png">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
